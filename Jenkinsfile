@@ -11,6 +11,11 @@ pipeline {
         sh 'mvn cobertura:cobertura test'
       }
     }
+    stage('report') {
+      steps {
+        junit 'arget/surefire-reports/*.xml'
+      }
+    }
   }
   post {
     always {
