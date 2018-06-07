@@ -15,7 +15,7 @@ pipeline {
       parallel {
         stage('report') {
           steps {
-            junit 'arget/surefire-reports/*.xml'
+            junit 'target/surefire-reports/*.xml'
           }
         }
         stage('reports') {
