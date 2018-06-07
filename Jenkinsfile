@@ -30,6 +30,11 @@ pipeline {
         sh 'mvn package'
       }
     }
+    stage('arc') {
+      steps {
+        archiveArtifacts 'target/*.jar'
+      }
+    }
   }
   post {
     always {
